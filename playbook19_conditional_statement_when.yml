@@ -1,0 +1,11 @@
+---
+- name: Copy a file
+  hosts: all
+  vars:
+    - a: 10
+  tasks:
+    - name: Copy passwd file
+      copy:
+        src: /etc/passwd
+        dest: /tmp
+      when: a == 20
